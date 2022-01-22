@@ -312,6 +312,16 @@ couleur* initialisation_propriete () {
 	liste_gare[3] = gare4;
 
 	couleur Gare = couleur("gare",4,liste_gare);
+	
+	compagnie* liste_compagnie = new compagnie[2];
+
+	compagnie compagnie1 = compagnie("Compagnie de Distribution Electrique");
+	compagnie compagnie2 = compagnie("Compagnie de Distribution des Eaux");
+
+	liste_compagnie[0] = comapgnie1;
+	liste_compagnie[1] = compagnie2;
+
+	couleur Gare = couleur("gare",4,liste_gare);
 
 	
 	// On peut maintenant initialiser les couleurs comme objets contenant la liste de terrains de leur couleur
