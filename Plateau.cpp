@@ -71,7 +71,7 @@ void Plateau::creerCases() {
     listeLoyer1[4]= 160 ;
     listeLoyer1[5]= 250 ;
 
-    static Terrain ter1 = Terrain("Boulevard de Belleville", listeLoyer1,60);
+    Terrain ter1 = Terrain("Boulevard de Belleville", listeLoyer1,60);
 
     int* listeLoyer2 = new int[6];
     listeLoyer2[0]= 4 ;
@@ -81,7 +81,7 @@ void Plateau::creerCases() {
     listeLoyer2[4]= 320 ;
     listeLoyer2[5]= 450 ;
 
-    static Terrain ter2 = Terrain("Rue Lecourbe", listeLoyer2,60);
+    Terrain ter2 = Terrain("Rue Lecourbe", listeLoyer2,60);
 
     int* listeLoyer3 = new int[6];
     listeLoyer3[0]= 6 ;
@@ -91,7 +91,7 @@ void Plateau::creerCases() {
     listeLoyer3[4]= 400 ;
     listeLoyer3[5]= 550 ;
 
-    static Terrain ter3 = Terrain("Rue de Vaugirard", listeLoyer3,100);
+    Terrain ter3 = Terrain("Rue de Vaugirard", listeLoyer3,100);
 
 
     int* listeLoyer4 = new int[6];
@@ -102,7 +102,7 @@ void Plateau::creerCases() {
     listeLoyer4[4]= 400 ;
     listeLoyer4[5]= 550 ;
 
-    static Terrain ter4 = Terrain("Rue de Courcelles", listeLoyer4,100);
+    Terrain ter4 = Terrain("Rue de Courcelles", listeLoyer4,100);
 
 
     int* listeLoyer5 = new int[6];
@@ -113,7 +113,7 @@ void Plateau::creerCases() {
     listeLoyer5[4]= 450 ;
     listeLoyer5[5]= 600 ;
 
-    static Terrain ter5 = Terrain("Avenue de la République", listeLoyer5,120);
+    Terrain ter5 = Terrain("Avenue de la République", listeLoyer5,120);
 
 
     int* listeLoyer6 = new int[6];
@@ -124,7 +124,7 @@ void Plateau::creerCases() {
     listeLoyer6[4]= 625 ;
     listeLoyer6[5]= 750 ;
 
-    static Terrain ter6= Terrain("Boulevard de la Villette", listeLoyer6,140);
+    Terrain ter6= Terrain("Boulevard de la Villette", listeLoyer6,140);
 
 
     int* listeLoyer7 = new int[6];
@@ -135,7 +135,7 @@ void Plateau::creerCases() {
     listeLoyer7[4]= 625 ;
     listeLoyer7[5]= 750 ;
 
-    static Terrain ter7 = Terrain("Avenue de Neuilly", listeLoyer7,140);
+    Terrain ter7 = Terrain("Avenue de Neuilly", listeLoyer7,140);
 
 
     int* listeLoyer8 = new int[6];
@@ -146,7 +146,7 @@ void Plateau::creerCases() {
     listeLoyer8[4]= 700 ;
     listeLoyer8[5]= 900 ;
 
-    static Terrain ter8 = Terrain("Rue de Paradis", listeLoyer8,160);
+    Terrain ter8 = Terrain("Rue de Paradis", listeLoyer8,160);
 
 
     int* listeLoyer9 = new int[6];
@@ -157,7 +157,7 @@ void Plateau::creerCases() {
     listeLoyer9[4]= 750 ;
     listeLoyer9[5]= 950 ;
 
-    static Terrain ter9 = Terrain("Avenue Mozart", listeLoyer9,180);
+    Terrain ter9 = Terrain("Avenue Mozart", listeLoyer9,180);
 
 
     int* listeLoyer10 = new int[6];
@@ -168,7 +168,7 @@ void Plateau::creerCases() {
     listeLoyer10[4]= 750 ;
     listeLoyer10[5]= 950 ;
 
-    static Terrain ter10= Terrain("Boulevard Saint-Michel", listeLoyer10,180);
+    Terrain ter10= Terrain("Boulevard Saint-Michel", listeLoyer10,180);
 
     int* listeLoyer11 = new int[6];
     listeLoyer11[0]= 16;
@@ -178,7 +178,7 @@ void Plateau::creerCases() {
     listeLoyer11[4]= 800 ;
     listeLoyer11[5]= 1000 ;
 
-    static Terrain ter11 = Terrain("Place Pigalle", listeLoyer11,200);
+    Terrain ter11 = Terrain("Place Pigalle", listeLoyer11,200);
 
 
     int* listeLoyer12 = new int[6];
@@ -189,7 +189,7 @@ void Plateau::creerCases() {
     listeLoyer12[4]= 875 ;
     listeLoyer12[5]= 1050 ;
 
-    static Terrain ter12 = Terrain("Avenue Matignon", listeLoyer12,220);
+    Terrain ter12 = Terrain("Avenue Matignon", listeLoyer12,220);
 
 
     int* listeLoyer13 = new int[6];
@@ -200,7 +200,7 @@ void Plateau::creerCases() {
     listeLoyer13[4]= 875 ;
     listeLoyer13[5]= 1050 ;
 
-    static Terrain ter13 = Terrain("Boulevard Malesherbes", listeLoyer13,220);
+    Terrain ter13 = Terrain("Boulevard Malesherbes", listeLoyer13,220);
 
 
     int* listeLoyer14 = new int[6];
@@ -211,7 +211,7 @@ void Plateau::creerCases() {
     listeLoyer14[4]= 925 ;
     listeLoyer14[5]= 1100 ;
 
-    static Terrain ter14 = Terrain("Avenue Henri-Martin", listeLoyer14,240);
+    Terrain ter14 = Terrain("Avenue Henri-Martin", listeLoyer14,240);
 
 
     int* listeLoyer15 = new int[6];
@@ -222,7 +222,7 @@ void Plateau::creerCases() {
     listeLoyer15[4]= 975 ;
     listeLoyer15[5]= 1150 ;
 
-    static Terrain ter15 = Terrain("Faubourg Saint-Honoré", listeLoyer15,260);
+    Terrain ter15 = Terrain("Faubourg Saint-Honoré", listeLoyer15,260);
 
 
     int* listeLoyer16 = new int[6];
@@ -233,7 +233,7 @@ void Plateau::creerCases() {
     listeLoyer16[4]= 975 ;
     listeLoyer16[5]= 1150 ;
 
-    static Terrain ter16 = Terrain("Place de la Bourse", listeLoyer16,260);
+    Terrain ter16 = Terrain("Place de la Bourse", listeLoyer16,260);
 
 
     int* listeLoyer17 = new int[6];
@@ -244,7 +244,7 @@ void Plateau::creerCases() {
     listeLoyer17[4]= 1025 ;
     listeLoyer17[5]= 1200;
 
-    static Terrain ter17 = Terrain("Rue La Fayette", listeLoyer17,280);
+    Terrain ter17 = Terrain("Rue La Fayette", listeLoyer17,280);
 
 
     int* listeLoyer18 = new int[6];
@@ -255,7 +255,7 @@ void Plateau::creerCases() {
     listeLoyer18[4]= 1100 ;
     listeLoyer18[5]= 1275;
 
-    static Terrain ter18 = Terrain("Avenue de Breteuil", listeLoyer18,300);
+    Terrain ter18 = Terrain("Avenue de Breteuil", listeLoyer18,300);
 
 
     int* listeLoyer19 = new int[6];
@@ -266,7 +266,7 @@ void Plateau::creerCases() {
     listeLoyer19[4]= 1100 ;
     listeLoyer19[5]= 1275;
 
-    static Terrain ter19= Terrain("Avenue Foch", listeLoyer19,300);
+    Terrain ter19= Terrain("Avenue Foch", listeLoyer19,300);
 
 
     int* listeLoyer20 = new int[6];
@@ -277,7 +277,7 @@ void Plateau::creerCases() {
     listeLoyer20[4]= 1200;
     listeLoyer20[5]= 1400;
 
-    static Terrain ter20 = Terrain("Boulevard des Capucines", listeLoyer20,320);
+    Terrain ter20 = Terrain("Boulevard des Capucines", listeLoyer20,320);
 
 
     int* listeLoyer21 = new int[6];
@@ -288,7 +288,7 @@ void Plateau::creerCases() {
     listeLoyer21[4]= 1300;
     listeLoyer21[5]= 1500;
 
-    static Terrain ter21 = Terrain("Avenue des Champs-Elysées", listeLoyer21,350);
+    Terrain ter21 = Terrain("Avenue des Champs-Elysées", listeLoyer21,350);
 
 
     int* listeLoyer22 = new int[6];
@@ -299,7 +299,7 @@ void Plateau::creerCases() {
     listeLoyer22[4]= 1700;
     listeLoyer22[5]= 2000;
 
-    static Terrain ter22 = Terrain("Rue de la Paix", listeLoyer22,400);
+    Terrain ter22 = Terrain("Rue de la Paix", listeLoyer22,400);
 
     Terrain* liste_terrain_bru = new Terrain[2];
     liste_terrain_bru[0]= ter1 ;
