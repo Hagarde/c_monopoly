@@ -17,8 +17,8 @@ public:
 	gobelet();
 	virtual ~gobelet();
 	static int getValeur(){return (de1.getValeur() + de2.getValeur());};
-	void lancer();
-	bool Double();
+	static void lancer();
+	static bool Double();
 };
 
 #endif /* GOBELET_H_ */
