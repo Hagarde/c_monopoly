@@ -22,17 +22,14 @@
 
 class Plateau {
 private:
-	Case* liste_case ;
-	couleur* liste_propriete = initialisation_propriete();
-	ensemble_gare Gares ;
+	static Case* liste_case ;
+	static couleur* liste_couleur;
+	static ensemble_gare Gares ;
 public:
-	Plateau();
-	virtual ~Plateau();
-	void creerCases();
-	//void lierCases();
-	Case* getCase(int IDCase );
-	Carte* initialisation_cartes_chance();
-	Carte* initialisation_cartes_communaute();
+	static void creerCases();
+	static Case* getCase(int IDCase );
+	static Carte* initialisation_cartes_chance();
+	static Carte* initialisation_cartes_communaute();
 };
 
 #endif /* PLATEAU_H_ */
