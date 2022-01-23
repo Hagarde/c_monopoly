@@ -7,11 +7,11 @@
 
 #include "Plateau.h"
 
+
 Plateau::Plateau() {
 	// TODO Auto-generated constructor stub
 	this->liste_case = NULL;
 	this->liste_propriete= NULL;
-	this->Gares = NULL;
 }
 
 Plateau::~Plateau() {
@@ -64,14 +64,13 @@ void Plateau::creerCases() {
 	// initialisation de toutes les proprietes et gare
 
 
-	couleur* liste_propriete = initialisation_propriete(); // merci corentin
+	couleur* liste_couleur = new couleur[9];
 
-	this->liste_propriete = liste_propriete;
-}
-
-void Plateau::lierCases() {
+	liste_couleur = initialisation_propriete();
 
 }
+
+//void Plateau::lierCases() {}. On vire cette méthode pour l'instant
 
 Case* Plateau::getCase(int IDCase ){
 	return &(this->liste_case[IDCase]);

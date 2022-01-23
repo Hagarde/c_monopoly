@@ -12,7 +12,7 @@
 #include "Case.h"
 #include "joueur.h"
 
-using namespace std;
+
 
 class joueur;
 class Case;

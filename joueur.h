@@ -10,13 +10,13 @@
 #ifndef JOUEUR_H_
 #define JOUEUR_H_
 
-#include <iostream>
+
 #include "Case.h"
 #include "pion.h"
 
 class joueur {
 	private :
-		string Nom; //Définir le nom du joueur, c'est pratique si c'est le même que le pion 
+		std::string Nom; //Définir le nom du joueur, c'est pratique si c'est le même que le pion
 		pion Pion ; //Pointeur vers le pion : le joueur doit savoir où se trouve son pion
 		int solde ; //La THUNE possédée par le joueur
 		bool prison ; // Si le joueur est ecutellement en prison
@@ -25,10 +25,10 @@ class joueur {
 		
 	public:
 		joueur();
-		joueur(string nom,pion Pion ); //Constructeur du joueur
+		joueur(std::string nom,pion Pion ); //Constructeur du joueur
 		virtual ~joueur(); //Destructeur mais qu'on utilisera sûrement pas : le joueur reste là jusqu'à la fin du jeu
 	
-		string getNom(){return this->Nom;}; //Return le nom du joueur. Pas de setters associé, ce sera défini lors de la création de l'objet Joueur
+		std::string getNom(){return this->Nom;}; //Return le nom du joueur. Pas de setters associé, ce sera défini lors de la création de l'objet Joueur
 	
 		void setPion(pion Pion){this->Pion = Pion;}; //On set le pion du joueur avec tous ses attributs associés
 		pion getPion(){return this->Pion;}; //On get le pion du joueur, avec tous ses attributs associés

@@ -7,13 +7,12 @@
 
 #ifndef TERRAIN_H_
 #define TERRAIN_H_
-#include <string>
+
 #include "propriete.h"
 #include "couleur.h"
 
 class Terrain: public propriete {
 private :
-	string nom;
 	couleur* Couleur;
 	int nMaison;
 public:

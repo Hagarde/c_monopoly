@@ -6,7 +6,6 @@
  */
 
 #include "chance.h"
-#include "initialisation_chance.h"
 #include <stdlib.h>
 
 chance::chance(string nom, Case* suivante):Case(nom,suivante) {

@@ -8,7 +8,7 @@
 #ifndef CASE_H_
 #define CASE_H_
 
-#include <iostream>
+
 #include "joueur.h"
 
 using namespace std;

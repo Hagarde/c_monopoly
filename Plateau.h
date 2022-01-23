@@ -16,7 +16,6 @@
 #include "caseinutile.h"
 #include "communaute.h"
 #include "chance.h"
-#include "ensemble_gare.h"
 #include "taxe.h"
 #include "gare.h"
 
@@ -24,7 +23,6 @@ class Plateau {
 private:
 	Case* liste_case ;
 	couleur* liste_propriete ;
-	ensemble_gare Gares ;
 public:
 	Plateau();
 	virtual ~Plateau();

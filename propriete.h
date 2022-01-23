@@ -7,6 +7,7 @@
 #ifndef PROPRIETE_H_
 #define PROPRIETE_H_
 #include "Case.h"
+
 class propriete: public Case {
 protected :
 	string nom ;
