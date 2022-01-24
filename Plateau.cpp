@@ -374,28 +374,28 @@ void Plateau::creerCases() {
 
 		// Initialisation des 3 cases communaute
 
-			communaute communaute1 = communaute("communaute1");
-			communaute communaute2 = communaute("communaute2");
-			communaute communaute3 = communaute("communaute3");
+			communaute communaute1 = communaute("Communaute");
+			communaute communaute2 = communaute("Communaute");
+			communaute communaute3 = communaute("Communaute");
 
 			Carte* pile_carte_communaute = new Carte[16];
 					// Je crée chaque carte avec text gain perte deplacement telportation
 			pile_carte_communaute[0] = Carte("Payez le police d'assurance : 50 euros",0,50);
-			pile_carte_communaute[1] = Carte("Vous héritez de 100 euros",100);
-			pile_carte_communaute[2] = Carte("Conservez cette carte pour pouvoir être libéré de prison");
-			pile_carte_communaute[3] = Carte("Payez la note du médecin : 50 euros",0,50);
-			pile_carte_communaute[4] = Carte("Vous gagnez le 2nd prix de beauté, recevez 100 euros",100);
+			pile_carte_communaute[1] = Carte("Vous heritez de 100 euros",100);
+			pile_carte_communaute[2] = Carte("Conservez cette carte pour pouvoir etre libere de prison");
+			pile_carte_communaute[3] = Carte("Payez la note du medecin : 50 euros",0,50);
+			pile_carte_communaute[4] = Carte("Vous gagnez le 2nd prix de beaute, recevez 100 euros",100);
 			pile_carte_communaute[5] = Carte("Les contributions vous remboursent 20 euros",20);
-			pile_carte_communaute[6] = Carte("Recevez vos intérêts : 25 euros",25);
-			pile_carte_communaute[7] = Carte("Retournez à Boulevard de Belleville",0,0,0,&ter1);
-			pile_carte_communaute[8] = Carte("Aller en prison",0,0,0,&Prison);
-			pile_carte_communaute[9] = Carte("Placez vous sur la Case Départ",0,0,0,&Depart);
+			pile_carte_communaute[6] = Carte("Recevez vos interets : 25 euros",25);
+			pile_carte_communaute[7] = Carte("Retournez au Boulevard de Belleville",0,0,0,&ter1);
+			pile_carte_communaute[8] = Carte("Allez en prison",0,0,0,&Prison);
+			pile_carte_communaute[9] = Carte("Placez vous sur la Case Depart",0,0,0,&Depart);
 			pile_carte_communaute[10] = Carte("C'est votre anniversaire. Chaque joueur vous donne 20 euros.");
 			pile_carte_communaute[11] = Carte("Recevez 100 euros",100);
 			pile_carte_communaute[12] = Carte("Payez une amende de 10 euros ou tirez une carte chance");
 			pile_carte_communaute[13] = Carte("Erreur de la banque en votre faveur, recevez 200 euros",200);
 			pile_carte_communaute[14] = Carte("Vente de votre stock, recevez 50 euros",50);
-			pile_carte_communaute[15] = Carte("Payez les frais d'hôpital : 100 euros",0,100);
+			pile_carte_communaute[15] = Carte("Payez les frais d'hopital : 100 euros",0,100);
 
 			communaute1.setPile_carte_commmuanute(pile_carte_communaute);
 			communaute2.setPile_carte_commmuanute(pile_carte_communaute);
@@ -403,9 +403,9 @@ void Plateau::creerCases() {
 
 			// initialisation des 3 cases chance
 
-			chance chance1 = chance("chance1");
-			chance chance2 = chance("chance2");
-			chance chance3 = chance("chance3");
+			chance chance1 = chance("Chance");
+			chance chance2 = chance("Chance");
+			chance chance3 = chance("Chance");
 
 
 			Carte* pile_carte_chance = new Carte[14];
@@ -518,7 +518,11 @@ void Plateau::creerCases() {
 //void Plateau::lierCases() {}. On vire cette méthode pour l'instant
 
 Case* Plateau::getCase(int IDCase ){
-	return &(this->liste_case[IDCase]);
+	Case* position_actuelle = this->liste_case;
+	for (int i =0; i < IDCase; i++){
+		position_actuelle = position_actuelle->getSuivante();
+	}
+	return position_actuelle;
 }
 
 void Plateau::afficheCases() {

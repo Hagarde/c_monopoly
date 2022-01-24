@@ -24,8 +24,7 @@ pion::~pion() {
 }	
 
 void pion::deplacer(int combien,Plateau plateau){
-	joueur Joueur = *ptJoueur;
-	Case* postionactuelle = this->ptPosition;
+	Case* position_actuelle = this->ptPosition;
 	Case* position_suivante = this->ptPosition->getSuivante();
 	for (int i = 0 ; i < combien ; i ++){
 		this->ptPosition = position_suivante ;
@@ -33,6 +32,6 @@ void pion::deplacer(int combien,Plateau plateau){
 		if (this->ptPosition == plateau.getListeCase()){
 			this->ptJoueur->crediter(200);
 		}
-		postionactuelle->arreterSur(this->ptJoueur);
+		position_actuelle->arreterSur(this->ptJoueur);
 	}
 }

@@ -8,6 +8,7 @@
 #ifndef PLATEAU_H_
 #define PLATEAU_H_
 
+#include <string>
 #include "depart.h"
 #include "prison.h"
 #include "allezPrison.h"

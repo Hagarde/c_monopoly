@@ -45,6 +45,9 @@ bool joueur::isOut(){
 }
 
 void joueur::jouer(Plateau plateau , gobelet Gobelet){
+	std::string reponse;
+	std::cout<<"C'est au tour de "<< this->Nom << " de jouer"<< std::endl;
+	std::cin>>reponse;
     if (solde > 0) {
         if (prison) {
         	if (this->temps_prison ==3  ){
@@ -91,21 +94,33 @@ void joueur::jouer(Plateau plateau , gobelet Gobelet){
         else { // cas classique
         	// A rajouter le choix de mettre des maisons ou pas
         	Gobelet.lancer();
-        	int depalcement = Gobelet.getValeur();
-        	this->ptPion->deplacer(depalcement,plateau);
+        	int deplacement = Gobelet.getValeur();
+
+        	std::cout<<"le score des des est : "<<deplacement<<std::endl;
+
+        	this->ptPion->deplacer(deplacement,plateau);
+    		std::cout<< "Vous etes arrivé sur la case: "<< ptPion->getPosition()->getNom()<<std::endl;
+
         	if (Gobelet.Double() == true ){
+        		std::cout << "C'est un double ma gueule wola !!"<<std::endl;
         		if (this->solde > 0) {
         		Gobelet.lancer();
-        		int depalcement = Gobelet.getValeur();
-        		this->ptPion->deplacer(depalcement,plateau);
+        		int deplacement = Gobelet.getValeur();
+        		std::cout<<"On rejoue ! La valeur des des est :"<< deplacement <<std::endl;
+        		this->ptPion->deplacer(deplacement,plateau);
+
+        		std::cout<< "Vous etes arrivé sur la case: "<< ptPion->getPosition()->getNom()<<std::endl;
+
         		if (Gobelet.Double() == true){
         			if (this->solde > 0) {
         			    Gobelet.lancer();
-        			    int depalcement = Gobelet.getValeur();
-        			    this->ptPion->deplacer(depalcement,plateau);
+        			    int deplacement = Gobelet.getValeur();
+        			    std::cout<<"On ReRejoue ! La valeur des des est : "<< deplacement<<std::endl;
+        			    this->ptPion->deplacer(deplacement,plateau);
         			    if (Gobelet.Double()==true){// DIRECTION PRISON
         			    		this->prison= true ;
-        			    		this->ptPion->setPosition(&plateau.getListeCase()[10]);
+        			    		std::cout<<"C'est la taule !"<<std::endl;
+        			    		this->ptPion->setPosition(plateau.getCase(10));
         			    	}
         				}
         			}

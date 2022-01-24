@@ -31,13 +31,16 @@ int main() {
 	Plateau plateau = Plateau();
 	plateau.creerCases();
 
+	Case NomBidon = *plateau.getCase(12);
+	std::cout<<NomBidon.getNom()<< std::endl;
+
 	plateau.affciheCouleurs();
 
 	plateau.afficheCases();
 
-	std::cout << "Bienvenue dans le logiciel Monopolyde ORY Victor , CHAPLAIN Nicolas, GOURC Corentin" << std::endl ;
+	std::cout << "Bienvenue dans le logiciel Monopoly de ORY Victor , ROYANT Kilian, CHAPLAIN Nicolas, GOURC Corentin" << std::endl ;
 	int nmbrJoueur ;
-	std::cout << "Veuiller entrer le nombre de joueur : " << std::endl ;
+	std::cout << "Veuillez entrer le nombre de joueur : " << std::endl ;
 	std::cin >> nmbrJoueur ;
 	joueur* listeJoueur = new joueur[nmbrJoueur];
 
@@ -55,24 +58,24 @@ int main() {
 		std::cin >> nomPion ;
 
 		pion* ptPion = new pion(nomPion,plateau.getListeCase());
-		pion Pion = *ptPion ;
 
 		joueur* ptJoueur = new joueur(nomJoueur,ptPion);
-		joueur Joueur = *ptJoueur;
-		listeJoueur[i] = Joueur;
-		Pion.setJoueur(ptJoueur);
-		Pion.setPosition(plateau.getListeCase());
+		listeJoueur[i] = *ptJoueur;
+
+		ptPion->setJoueur(ptJoueur);
+		std::cout<<"Le  joueur "<<(ptPion->getJoueur())->getNom()<<" a été créé"<<std::endl;
+		ptPion->setPosition(plateau.getCase(0));
 	}
 
 	std::cout<< "La phase de crÃ©ation des joueurs est finie ! " << std::endl;
 
 	for (int i = 0 ;  i < nmbrJoueur ; i ++ ) {
-		pion ptPionaffiche = *listeJoueur[i].getptPion();
-		std::string Pionaffiche = ptPionaffiche.getNom();
-		std::string casedÃ©part = ptPionaffiche.getPosition()->getNom();
-		std::cout << "La position actuelle du pion du joueur "<< listeJoueur[i].getNom() <<" est la case : " << casedÃ©part << std::endl;
+		pion* ptPionaffiche = listeJoueur[i].getptPion();
+		//std::cout<<ptPionaffiche->getNom()<<std::endl;
+		//std::string NomPion = ptPionaffiche->getNom();
+		std::string casedepart = ptPionaffiche->getPosition()->getNom();
+		std::cout << "La position actuelle du pion "<<listeJoueur[i].getptPion()->getNom()<<" du joueur "<< listeJoueur[i].getNom() <<" est la case : " << casedepart << std::endl;
 	}
-
 	jeu Jeu = jeu();
 
 
@@ -87,6 +90,7 @@ int main() {
 			joueur Joueur = listeJoueur[i];
 			Joueur.jouer( plateau , Gobelet);
 		}
+
 	}
 	return 0;
 }
