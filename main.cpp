@@ -35,10 +35,16 @@ int main() {
 
 	plateau.afficheCases();
 
-	std::cout << "Bienvenue dans le logiciel Monopolyde ORY Victor , CHAPLAIN Nicolas, GOURC Corentin" << std::endl ;
+	std::cout << "Bienvenue dans le logiciel Monopoly de ORY Victor, CHAPLAIN Nicolas, GOURC Corentin et ROYANT Killian" << std::endl ;
 	int nmbrJoueur ;
-	std::cout << "Veuiller entrer le nombre de joueur : " << std::endl ;
-	std::cin >> nmbrJoueur ;
+    try {
+        std::cout << "Veuiller entrer le nombre de joueur : " << std::endl ;
+        std::cin >> nmbrJoueur ;
+    }
+    catch (...) {
+        std::cout << "Erreur : Veuillez entrer un entier." << std::endl ;
+    }
+
 	joueur* listeJoueur = new joueur[nmbrJoueur];
 
 	// Création du plateau de manière à pouvoir placer le pion sur la carte départ
