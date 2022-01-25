@@ -16,7 +16,7 @@ allezPrison::~allezPrison() {
 	// TODO Auto-generated destructor stub
 }
 
-void allezPrison::arretrSur(joueur* ptJoueur){
+void allezPrison::arreterSur(joueur* ptJoueur){
 	joueur Joueur = *ptJoueur ;
 	Joueur.entrerPrison();
 }

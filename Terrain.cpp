@@ -19,6 +19,7 @@ Terrain::Terrain(std::string nom, int* ptLoyer, int prixAchat, couleur* Couleur,
 }
 
 void Terrain::arreterSur(joueur* ptJoueur){
+	//joueur* ptJoueur = ptPion->getJoueur();
 	if (ptProprietaire == NULL){
 		std::string reponse;
 		std::cout<< "le bien est disponible. Son prix est de "<<this->prixAchat<<". Souhaitez-vous l'acheter ?"<< std::endl;
@@ -27,10 +28,10 @@ void Terrain::arreterSur(joueur* ptJoueur){
 			joueur Joueur = *ptJoueur;
 			Joueur.debiter(this->getPrixAchat());
 			std::cout<<"Vous avez achete la propriete "<< this->nom << ". Votre solde est maintenant de " << Joueur.getSolde() << std::endl ;
-			this->ptProprietaire = ptJoueur; //On signale à la propriete qu'il y a désormais un proprio
-		} //Il faut ajouter la propriÃ©tÃ© Ã  la liste des propriÃ©tÃ©s du joueur.
+			this->ptProprietaire = ptJoueur; //On signale a la propriete qu'il y a desormais un proprio
+		} //Il faut ajouter la propriete a la liste des proprietes du joueur.
 		else{
-			std::cout<< "Vous avez dÃ©cidÃ© de ne pas acheter cette propriÃ©tÃ©"<< std::endl;
+			std::cout<< "Vous avez decide de ne pas acheter cette propriete"<< std::endl;
 	}
 	}
 	else{

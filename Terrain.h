@@ -8,6 +8,7 @@
 #ifndef TERRAIN_H_
 #define TERRAIN_H_
 
+class pion;
 #include "propriete.h"
 #include "couleur.h"
 
@@ -22,7 +23,7 @@ public:
 	virtual ~Terrain();
 	void setNom(std::string Nom){this->nom =Nom;};
 	std::string getNom(){return this->nom;};
-	void arreterSur(joueur* ptJoueur);
+	virtual void arreterSur(joueur* ptJoueur);
 	couleur* getCouleur(){return this->Couleur;};
 	void setCouleur(couleur* Couleur){this->Couleur = Couleur;};
 };

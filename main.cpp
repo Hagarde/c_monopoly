@@ -31,15 +31,21 @@ int main() {
 	Plateau plateau = Plateau();
 	plateau.creerCases();
 
-	Case NomBidon = *plateau.getCase(12);
-	std::cout<<NomBidon.getNom()<< std::endl;
-
 	plateau.affciheCouleurs();
 
 	plateau.afficheCases();
 
 	std::cout << "Bienvenue dans le logiciel Monopoly de ORY Victor , ROYANT Kilian, CHAPLAIN Nicolas, GOURC Corentin" << std::endl ;
 	int nmbrJoueur ;
+
+	/*try {
+	        std::cout << "Veuiller entrer le nombre de joueur : " << std::endl ;
+	        std::cin >> nmbrJoueur ;
+	    }
+	    catch (...) {
+	        std::cout << "Erreur : Veuillez entrer un entier." << std::endl ;
+	    }
+*/
 	std::cout << "Veuillez entrer le nombre de joueur : " << std::endl ;
 	std::cin >> nmbrJoueur ;
 	joueur* listeJoueur = new joueur[nmbrJoueur];
@@ -54,7 +60,7 @@ int main() {
 		std::cout << "Comment s'appelle le Joueur " << i + 1 << "?" << std::endl;
 		std::cin >> nomJoueur ;
 		std::string nomPion ;
-		std::cout << "Entrer le nom du pion que vous voulez sélectionner pour le jouer numéro " <<  i << std::endl ;
+		std::cout << "Entrer le nom du pion que vous voulez selectionner pour le jouer numero " <<  i+1 << std::endl ;
 		std::cin >> nomPion ;
 
 		pion* ptPion = new pion(nomPion,plateau.getListeCase());
@@ -67,7 +73,7 @@ int main() {
 		ptPion->setPosition(plateau.getCase(0));
 	}
 
-	std::cout<< "La phase de création des joueurs est finie ! " << std::endl;
+	std::cout<< "La phase de creation des joueurs est finie ! " << std::endl;
 
 	for (int i = 0 ;  i < nmbrJoueur ; i ++ ) {
 		pion* ptPionaffiche = listeJoueur[i].getptPion();

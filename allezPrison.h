@@ -9,13 +9,13 @@
 #define ALLEZPRISON_H_
 
 #include "Case.h"
-#
+class joueur;
 
 class allezPrison: public Case {
 public:
 	allezPrison(std::string nom, Case* suivante=NULL);
 	virtual ~allezPrison();
-	void arretrSur(joueur* ptJoueur);
+	void arreterSur(joueur* ptJoueur);
 };
 
 #endif /* ALLEZPRISON_H_ */

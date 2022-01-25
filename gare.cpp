@@ -21,6 +21,7 @@ gare::gare(std::string nom, int prixAchat, Case* suivante, joueur* ptProprietair
 }
 
 void gare::arreterSur(joueur* ptJoueur){
+	std::cout<<"On est dans Gare !!!!!"<<std::endl;
 	if (this->ptProprietaire == NULL){
 		std::string reponse;
 		std::cout << "Vous etes tombe sur la case " << this->nom <<" Cette propriete n'appartient a  personne. Souhaitez-vous l'acheter pour "<< prixAchat << "E ?"<< std::endl;
@@ -31,7 +32,7 @@ void gare::arreterSur(joueur* ptJoueur){
 			this->ptProprietaire = ptJoueur; // On signale à la gare qu'elle à desormais un nouveau proprio
 		} //Il faut ajouter la propriÃ©tÃ© Ã  la liste des propriÃ©tÃ©s du joueur.
 		else{
-			std::cout<< "Vous avez décidé de ne pas acheter cette propriété"<<std::endl;
+			std::cout<< "Vous avez decide de ne pas acheter cette propriété"<<std::endl;
 		}
 	}
 	else{

@@ -9,7 +9,7 @@
 #define PRISON_H_
 
 #include "Case.h"
-
+class joueur;
 class Case;
 
 class prison: public Case {

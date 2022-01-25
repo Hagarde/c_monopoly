@@ -30,7 +30,7 @@ bool couleur::check_monopole(joueur* ptJoueur){
 	joueur Joueur = *ptJoueur;
 	int longueur = this->longueur;
 	for (int i = 0 ; i< longueur; i++) {
-		propriete propriete_a_evaluer = this->liste_propriete[i]; // On check si c'est le même proprio pour tout la couleur
+		propriete propriete_a_evaluer = this->liste_propriete[i]; // On check si c'est le meme proprio pour tout la couleur
 		joueur* proprietaire = propriete_a_evaluer.GetProprietaire();
 		if ( proprietaire != ptJoueur  ){
 			return false;

@@ -32,6 +32,6 @@ void pion::deplacer(int combien,Plateau plateau){
 		if (this->ptPosition == plateau.getListeCase()){
 			this->ptJoueur->crediter(200);
 		}
-		position_actuelle->arreterSur(this->ptJoueur);
+		//position_actuelle->arreterSur(this->ptJoueur);
 	}
 }

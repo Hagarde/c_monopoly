@@ -16,6 +16,7 @@ class joueur;
 class Case;
 class Plateau ;
 
+
 class pion {
 	private :
 		joueur* ptJoueur ; //Nom du joueur associé au Pion

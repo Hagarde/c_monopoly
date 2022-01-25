@@ -9,7 +9,7 @@
 #define DEPART_H_
 
 #include "Case.h"
-
+class joueur;
 class Case;
 
 class depart: public Case {

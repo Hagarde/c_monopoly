@@ -9,7 +9,7 @@
 #define COULEUR_H_
 
 #include "propriete.h"
-
+class joueur;
 class propriete; // declaration an ticipée
 
 class couleur {

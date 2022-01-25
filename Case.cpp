@@ -22,7 +22,4 @@ Case::~Case() {
 	// TODO Auto-generated destructor stub
 }
 
-void Case::arreterSur(joueur *joueur) {
-
-}
 

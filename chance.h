@@ -7,7 +7,7 @@
 
 #ifndef CHANCE_H_
 #define CHANCE_H_
-
+class pion;
 #include "Case.h"
 #include "Carte.h"
 

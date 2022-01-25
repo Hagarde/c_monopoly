@@ -9,7 +9,7 @@
 
 #include "Case.h"
 #include "couleur.h"
-
+class joueur;
 class propriete: public Case {
 protected :
 	std::string nom ;
@@ -19,7 +19,6 @@ protected :
 public:
 	propriete(std::string nom, int* ptLoyer, int prixAchat, Case* suivante, joueur* ptProprietaire= NULL);
 	virtual ~propriete();
-	void arreterSur() ;
 	std::string getNom(){return this->nom;};
 	void setNom(std::string Nom){this->nom=Nom;};
 	int* getPtLoyer(){return this->ptLoyer;};
@@ -28,5 +27,6 @@ public:
 	int getPrixAchat(){return this->prixAchat;};
 	void SetProprietaire(joueur* ptProprietaire){this->ptProprietaire = ptProprietaire;};
 	joueur* GetProprietaire(){return this->ptProprietaire;};
+/*	virtual void arreterSur(joueur* ptJoueur);*/
 };
 #endif /* PROPRIETE_H_ */

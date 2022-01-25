@@ -98,8 +98,10 @@ void joueur::jouer(Plateau plateau , gobelet Gobelet){
 
         	std::cout<<"le score des des est : "<<deplacement<<std::endl;
 
+
         	this->ptPion->deplacer(deplacement,plateau);
     		std::cout<< "Vous etes arrivé sur la case: "<< ptPion->getPosition()->getNom()<<std::endl;
+    		ptPion->getPosition()->arreterSur(this);
 
         	if (Gobelet.Double() == true ){
         		std::cout << "C'est un double ma gueule wola !!"<<std::endl;
@@ -110,6 +112,7 @@ void joueur::jouer(Plateau plateau , gobelet Gobelet){
         		this->ptPion->deplacer(deplacement,plateau);
 
         		std::cout<< "Vous etes arrivé sur la case: "<< ptPion->getPosition()->getNom()<<std::endl;
+        		ptPion->getPosition()->arreterSur(this);
 
         		if (Gobelet.Double() == true){
         			if (this->solde > 0) {
@@ -117,6 +120,7 @@ void joueur::jouer(Plateau plateau , gobelet Gobelet){
         			    int deplacement = Gobelet.getValeur();
         			    std::cout<<"On ReRejoue ! La valeur des des est : "<< deplacement<<std::endl;
         			    this->ptPion->deplacer(deplacement,plateau);
+        	    		ptPion->getPosition()->arreterSur(this);
         			    if (Gobelet.Double()==true){// DIRECTION PRISON
         			    		this->prison= true ;
         			    		std::cout<<"C'est la taule !"<<std::endl;

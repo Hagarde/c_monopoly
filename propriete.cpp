@@ -16,4 +16,3 @@ propriete::propriete(std::string nom, int* ptLoyer, int prixAchat, Case* suivant
 propriete::~propriete() {
 	// TODO Auto-generated destructor stub
 }
-

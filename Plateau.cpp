@@ -22,12 +22,12 @@ void Plateau::creerCases() {
 
 	// initialisation des cases taxes
 
-	taxe impot  = taxe("impôt sur le revenue");
-	taxe luxe = taxe("Taxe de luxe ");
+	taxe impot  = taxe("Impot sur le Revenue");
+	taxe luxe = taxe("Taxe de Luxe ");
 
 	//initailisation case inutile
 
-	case_inutile parc_gratuit = case_inutile("parc gratuit");
+	Case* parc_gratuit = new case_inutile("parc gratuit");
 
 	// initialisation  allez en prison
 
@@ -487,8 +487,8 @@ void Plateau::creerCases() {
 	ter9.setSuivante(&communaute2);
 	communaute2.setSuivante(&ter10);
 	ter10.setSuivante(&ter11);
-	ter11.setSuivante(&parc_gratuit);
-	parc_gratuit.setSuivante(&ter12);
+	ter11.setSuivante(parc_gratuit);
+	parc_gratuit->setSuivante(&ter12);
 
 	ter12.setSuivante(&chance2);
 	chance2.setSuivante(&ter13);

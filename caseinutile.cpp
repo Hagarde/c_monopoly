@@ -16,3 +16,8 @@ case_inutile::~case_inutile() {
 	// TODO Auto-generated destructor stub
 }
 
+
+void case_inutile::arreterSur(joueur* ptJoueur){
+	std::cout<<"Vous etes arrive sur le Parking Gratuit !!"<<std::endl;
+}
+

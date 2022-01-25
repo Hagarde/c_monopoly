@@ -14,7 +14,7 @@ class case_inutile: public Case {
 public:
 	case_inutile(std::string nom, Case* suivante=NULL);
 	virtual ~case_inutile();
-	void arreterSur(){};
+	void arreterSur(joueur* ptJoueur);
 };
 
 #endif /* CASEINUTILE_H_ */
