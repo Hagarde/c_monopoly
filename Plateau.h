@@ -20,10 +20,11 @@
 #include "Terrain.h"
 #include "compagnie.h"
 #include "Carte.h"
+#include "couleur.h"
 
 class Plateau {
 private:
-	Case* liste_case ;
+	Case* liste_case;
 	couleur* liste_propriete;
 public:
 	Plateau();

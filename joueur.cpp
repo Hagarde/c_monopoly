@@ -46,12 +46,12 @@ bool joueur::isOut(){
 
 void joueur::jouer(Plateau plateau , gobelet Gobelet){
 	std::string reponse;
-	std::cout<<"C'est au tour de "<< this->Nom << " de jouer"<< std::endl;
+	std::cout<<"C'est au tour de "<< this->Nom << " de jouer, appuyer sur Entr�e pour lancer le tour "<< std::endl;
 	std::cin>>reponse;
     if (solde > 0) {
         if (prison) {
-        	if (this->temps_prison ==3  ){
-        		std::cout << "Vous êtes libéré de prison " << std::endl;
+        	if (this->temps_prison == 3  ){
+        		std::cout << "Vous etes libere de prison " << std::endl;
         		this->prison = false;
         		this->temps_prison =0;
         		this->jouer(plateau, Gobelet);
@@ -104,7 +104,7 @@ void joueur::jouer(Plateau plateau , gobelet Gobelet){
     		ptPion->getPosition()->arreterSur(this);
 
         	if (Gobelet.Double() == true ){
-        		std::cout << "C'est un double ma gueule wola !!"<<std::endl;
+        		std::cout << "C'est un double"<<std::endl;
         		if (this->solde > 0) {
         		Gobelet.lancer();
         		int deplacement = Gobelet.getValeur();
@@ -120,7 +120,7 @@ void joueur::jouer(Plateau plateau , gobelet Gobelet){
         			    int deplacement = Gobelet.getValeur();
         			    std::cout<<"On ReRejoue ! La valeur des des est : "<< deplacement<<std::endl;
         			    this->ptPion->deplacer(deplacement,plateau);
-        	    		ptPion->getPosition()->arreterSur(this);
+        	    		(*ptPion->getPosition()).arreterSur(this);
         			    if (Gobelet.Double()==true){// DIRECTION PRISON
         			    		this->prison= true ;
         			    		std::cout<<"C'est la taule !"<<std::endl;

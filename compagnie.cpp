@@ -36,7 +36,7 @@ void compagnie::arreterSur(joueur* ptJoueur) {
 				ptProprietaire = ptJoueur; // maintenant elle appartient à qqn
 			} //Il faut ajouter la propriÃ©tÃ© Ã  la liste des propriÃ©tÃ©s du joueur.
 			else{
-				std::cout<< "Vous avez décidé de ne pas acheter cette propriété"<< std::endl;
+				std::cout<< "Vous avez decide de ne pas acheter cette propriete"<< std::endl;
 			}
 		}
 		else{

@@ -8,7 +8,6 @@
 #define PROPRIETE_H_
 
 #include "Case.h"
-#include "couleur.h"
 class joueur;
 class propriete: public Case {
 protected :
@@ -27,6 +26,6 @@ public:
 	int getPrixAchat(){return this->prixAchat;};
 	void SetProprietaire(joueur* ptProprietaire){this->ptProprietaire = ptProprietaire;};
 	joueur* GetProprietaire(){return this->ptProprietaire;};
-/*	virtual void arreterSur(joueur* ptJoueur);*/
+	//virtual void arreterSur();
 };
 #endif /* PROPRIETE_H_ */

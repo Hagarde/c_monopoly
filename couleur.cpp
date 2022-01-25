@@ -15,7 +15,7 @@ couleur::couleur(){
 
 }
 
-couleur::couleur(std::string nom,int longueur, propriete* liste_propriete) {
+couleur::couleur(std::string nom,int longueur, Terrain* liste_propriete) {
 	// TODO Auto-generated constructor stub
 	this->nom = nom;
 	this->longueur = longueur ;
@@ -30,7 +30,7 @@ bool couleur::check_monopole(joueur* ptJoueur){
 	joueur Joueur = *ptJoueur;
 	int longueur = this->longueur;
 	for (int i = 0 ; i< longueur; i++) {
-		propriete propriete_a_evaluer = this->liste_propriete[i]; // On check si c'est le meme proprio pour tout la couleur
+		Terrain propriete_a_evaluer = this->liste_propriete[i]; // On check si c'est le meme proprio pour tout la couleur
 		joueur* proprietaire = propriete_a_evaluer.GetProprietaire();
 		if ( proprietaire != ptJoueur  ){
 			return false;
@@ -39,14 +39,12 @@ bool couleur::check_monopole(joueur* ptJoueur){
 	return true;
 }
 
-int couleur::checkGare(joueur* ptJoueur){
+/*int couleur::checkGare(joueur* ptJoueur){
 	int compteur = 0 ;
 	for (int i = 0; i < this->longueur; i ++) {
-		propriete propri = this->liste_propriete[i];
+		Terrain propri = this->liste_propriete[i];
 		if (propri.GetProprietaire() == ptJoueur) {
 			compteur += 1 ;
 		}}
 	return compteur ;
-
-
-}
+}*/

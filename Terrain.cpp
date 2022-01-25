@@ -1,4 +1,4 @@
-/*
+ /*
  * Terrain.cpp
  *
  *  Created on: 23 dÃ©c. 2021
@@ -7,6 +7,7 @@
 
 #include "Terrain.h"
 #include "joueur.h"
+#include "couleur.h"
 
 Terrain::Terrain():propriete("temporaire",NULL,0,NULL,NULL){
 	this->Couleur = NULL;

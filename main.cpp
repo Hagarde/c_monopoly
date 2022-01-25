@@ -93,8 +93,7 @@ int main() {
 
 	while (Jeu.getCompteur() < 100 )  {
 		for (int i = 0 ; i < nmbrJoueur ; i ++){
-			joueur Joueur = listeJoueur[i];
-			Joueur.jouer( plateau , Gobelet);
+			(listeJoueur[i]).jouer( plateau , Gobelet);
 		}
 
 	}

@@ -21,5 +21,7 @@ Case::Case(){
 Case::~Case() {
 	// TODO Auto-generated destructor stub
 }
-
+void Case::arreterSur(joueur* ptJoueur){
+	std::cout<<"Arreter sur de Case"<<std::endl;
+}
 

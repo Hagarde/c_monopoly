@@ -8,7 +8,7 @@
 #include "gare.h"
 
 gare::gare():propriete("undefinied",NULL,200,NULL,NULL){
-	this->ptCouleur = NULL;
+	this->ptGares = NULL;
 }
 
 gare::gare(std::string nom, int prixAchat, Case* suivante, joueur* ptProprietaire,int* ptLoyer):propriete(nom,ptLoyer,prixAchat,suivante, ptProprietaire) {
@@ -17,7 +17,7 @@ gare::gare(std::string nom, int prixAchat, Case* suivante, joueur* ptProprietair
 	loyers[1] = 50 ;
 	loyers[2] = 100 ;
 	loyers[3] = 200 ;
-	this->ptCouleur = NULL;
+	this->ptGares = NULL;
 }
 
 void gare::arreterSur(joueur* ptJoueur){
@@ -36,10 +36,13 @@ void gare::arreterSur(joueur* ptJoueur){
 		}
 	}
 	else{
-		couleur Couleur = *ptCouleur;
-		Couleur.checkGare(ptJoueur);
-		int nbr_gares = Couleur.checkGare(ptJoueur);
-		int loyer = ptLoyer[nbr_gares]; //Fonction qui n'existe pas pour l'instant: elle va chercher le nombre de gare que possede un joueur. On fait -1 car ptLoyer est une liste qui commence à 0.
+		int nmbr_gares = 0 ;
+		for ( int i = 0 ; i < 4 ; i++) {
+			if (this->ptGares[i].GetProprietaire() == ptJoueur ){
+				nmbr_gares +=1 ;
+			}
+		}
+		int loyer = ptLoyer[nmbr_gares]; //Fonction qui n'existe pas pour l'instant: elle va chercher le nombre de gare que possede un joueur. On fait -1 car ptLoyer est une liste qui commence à 0.
 		//Le prix est diffÃ©rent en fonction du nombre de gare que le propriÃ©taire possÃ¨de.
 		std::cout << "Le proprietaire de cette case est "<< ptProprietaire << " vous lui devez " << loyer<<std::endl;
 		ptJoueur->debiter(loyer); //le joueur paye le locataire le prix du loyer

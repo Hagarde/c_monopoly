@@ -328,12 +328,11 @@ void Plateau::creerCases() {
 		liste_gare[2] = gare3;
 		liste_gare[3] = gare4;
 
-		couleur Gare = couleur("gare",4,liste_gare);
+		gare1.setptGares(liste_gare);
+		gare2.setptGares(liste_gare);
+		gare3.setptGares(liste_gare);
+		gare4.setptGares(liste_gare);
 
-		gare1.setptCouleur(&Gare);
-		gare2.setptCouleur(&Gare);
-		gare3.setptCouleur(&Gare);
-		gare4.setptCouleur(&Gare);
 
 		compagnie* liste_compagnie = new compagnie[2];
 
@@ -345,28 +344,28 @@ void Plateau::creerCases() {
 
 
 		// On peut maintenant initialiser les couleurs comme objets contenant la liste de terrains de leur couleur
-		couleur Brun = couleur("brun",2,liste_terrain_bru);
-		couleur Bleuciel = couleur("bleu ciel",2,liste_terrain_blc);
-		couleur Violet = couleur("violet",2,liste_terrain_vio);
-		couleur Orange = couleur("orange",2,liste_terrain_ora);
-		couleur Rouge= couleur("rouge",2,liste_terrain_rou);
-		couleur Jaune= couleur("jaune",2,liste_terrain_jau);
-		couleur Vert= couleur("vert",2,liste_terrain_ver);
-		couleur Bleu = couleur("bleu",2,liste_terrain_bleu);
+
+		couleur* Brun = new couleur("brun",2,liste_terrain_bru);
+		couleur*  Bleuciel = new couleur("bleu ciel",2,liste_terrain_blc);
+		couleur* Violet =new couleur("violet",2,liste_terrain_vio);
+		couleur* Orange =new couleur("orange",2,liste_terrain_ora);
+		couleur* Rouge=new couleur("rouge",2,liste_terrain_rou);
+		couleur* Jaune=new couleur("jaune",2,liste_terrain_jau);
+		couleur* Vert=new couleur("vert",2,liste_terrain_ver);
+		couleur* Bleu =new couleur("bleu",2,liste_terrain_bleu);
 
 
-		couleur* liste_couleur = new couleur[9];
+		couleur* liste_couleur = new couleur[8];
 
 		//On peut maintenant créer la liste des couleurs :
-		liste_couleur[0] = Brun;
-		liste_couleur[1] = Bleuciel;
-		liste_couleur[2] = Violet;
-		liste_couleur[3] = Orange;
-		liste_couleur[4] = Rouge;
-		liste_couleur[5] = Jaune;
-		liste_couleur[6] = Vert;
-		liste_couleur[7] = Bleu;
-		liste_couleur[8] = Gare;
+		liste_couleur[0] = *Brun;
+		liste_couleur[1] = *Bleuciel;
+		liste_couleur[2] = *Violet;
+		liste_couleur[3] = *Orange;
+		liste_couleur[4] = *Rouge;
+		liste_couleur[5] = *Jaune;
+		liste_couleur[6] = *Vert;
+		liste_couleur[7] = *Bleu;
 
 		this->liste_propriete = liste_couleur;
 
@@ -433,21 +432,21 @@ void Plateau::creerCases() {
 
 
 
-		// Et on peut maintenant affecter une couleur à chaque terrain :
-		ter1.setCouleur(&(liste_couleur[0]));
-		ter2.setCouleur(&(liste_couleur[0]));
+		// Et on peut maintenant affecter une couleur � chaque terrain :
+		ter1.setCouleur(Brun);
+		ter2.setCouleur(Brun);
 
-		ter3.setCouleur(&(liste_couleur[1]));
-		ter4.setCouleur(&(liste_couleur[1]));
-		ter5.setCouleur(&(liste_couleur[1]));
+		ter3.setCouleur(Bleuciel);
+		ter4.setCouleur(Bleuciel);
+		ter5.setCouleur(Bleuciel);
 
 		ter6.setCouleur(&(liste_couleur[2]));
 		ter7.setCouleur(&(liste_couleur[2]));
 		ter8.setCouleur(&(liste_couleur[2]));
 
 		ter9.setCouleur(&(liste_couleur[3]));
-		ter10.setCouleur(&(liste_couleur[3]));
-		ter11.setCouleur(&(liste_couleur[3]));
+	ter10.setCouleur(&(liste_couleur[3]));
+	ter11.setCouleur(&(liste_couleur[3]));
 
 	ter12.setCouleur(&(liste_couleur[4]));
 	ter13.setCouleur(&(liste_couleur[4]));
@@ -538,7 +537,6 @@ void Plateau::affciheCouleurs(){
 	for (int i=0;i<8;i++){
 			couleurActuelle = this->liste_propriete[i].getNom();
 			std::cout << couleurActuelle << std::endl;
-
 	 	}
 }
 

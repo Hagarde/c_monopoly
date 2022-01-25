@@ -23,7 +23,7 @@ class Case {
         Case();
 		Case(std::string nom, Case* suivante=NULL);
         virtual ~Case();
-        virtual void arreterSur(joueur* ptJoueur) = 0;
+        virtual void arreterSur(joueur* ptJoueur)=0;
 		std::string getNom(){return this->nom;};
 		void setNom(std::string nom){this->nom = nom ;};
 		Case* getSuivante(){return this->suivante;};
