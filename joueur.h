@@ -41,7 +41,7 @@ class joueur {
 
 		int getSolde(){return this->solde;}; //On get la THUNE du joueur.
 	
-		void jouer(Plateau plateau , gobelet Gobelet); //Le joueur réalise un tour de jeu
+		void jouer(Plateau plateau); //Le joueur réalise un tour de jeu
 		void crediter(int credit); //On donne de l'argent au joueur
 		void debiter(int debit); //On débite de l'argent au joueur
 

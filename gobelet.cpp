@@ -8,19 +8,20 @@
 #include "gobelet.h"
 
 gobelet::gobelet() {
-	this->de1 = de();
-	this->de2 = de();
+    de1 = de();
+    de2 = de();
 }
 
 gobelet::~gobelet() {
-	// TODO Auto-generated destructor stub
+    // TODO Auto-generated destructor stub
 }
 
 void gobelet::lancer(){
-	this->de1.lancer();
-	this->de2.lancer();
+    de1.lancer();
+    de2.lancer();
 }
 
 bool gobelet::Double() {
-	return (this->de1.getValeur() == de2.getValeur());
+    return (de1.getValeur() == de2.getValeur());
 }
+

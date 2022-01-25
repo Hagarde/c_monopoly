@@ -86,7 +86,7 @@ int main() {
 
 	// On commence la partie
 
-	gobelet Gobelet = gobelet();
+	//gobelet Gobelet = gobelet();
 
 	while (Jeu.getCompteur() < 100 )  {
 		for (int i = 0 ; i < nmbrJoueur ; i ++){

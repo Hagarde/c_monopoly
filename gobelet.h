@@ -11,14 +11,15 @@
 
 class gobelet {
 private :
-	de de1;
-	de de2;
+    static de de1;
+    static de de2;
 public:
-	gobelet();
-	virtual ~gobelet();
-	int getValeur(){return (de1.getValeur() + de2.getValeur());};
-	void lancer();
-	bool Double();
+    gobelet();
+    virtual ~gobelet();
+    static int getValeur(){return (de1.getValeur() + de2.getValeur());};
+    static void lancer();
+    static bool Double();
 };
+
 
 #endif /* GOBELET_H_ */

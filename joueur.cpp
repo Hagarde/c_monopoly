@@ -44,14 +44,14 @@ bool joueur::isOut(){
     return (solde<=0);
 }
 
-void joueur::jouer(Plateau plateau , gobelet Gobelet){
+void joueur::jouer(Plateau plateau){
     if (solde > 0) {
         if (prison) {
         	if (this->temps_prison ==3  ){
         		std::cout << "Vous êtes libéré de prison " << std::endl;
         		this->prison = false;
         		this->temps_prison =0;
-        		this->jouer(plateau, Gobelet);
+        		this->jouer(plateau);
         	}
         	if (this->carte_liberation > 0 ){ // proposer sortie avec carte
         		std::string response ;
@@ -60,25 +60,25 @@ void joueur::jouer(Plateau plateau , gobelet Gobelet){
         		if (response == "oui") {
         			this->prison = false;
         			this->carte_liberation -= 1 ;
-        			this->jouer(plateau,Gobelet);
+        			this->jouer(plateau);
         			this->temps_prison= 0;
         		}
         		else { // proposer de payer
-        			std::string resposne ;
+        			std::string response ;
         			std::cout << "Voulez-vous payer 50 € pour sortir de prison ? " << std::endl;
-        			std::cin>> resposne;
-        			if (resposne =="oui"){
+        			std::cin>> response;
+        			if (response =="oui"){
         				this->debiter(50);
         				this->prison = false;
         				this->temps_prison =0 ;
-        				this->jouer(plateau,Gobelet);
+        				this->jouer(plateau);
         			}
         			else { // Si le joueur refuse tout alors
-        				Gobelet.lancer();
-        				if (Gobelet.Double()){
+        				gobelet::lancer();
+        				if (gobelet::Double()){
         					this->prison = false;
         					this->temps_prison =0 ;
-        					this->ptPion->deplacer(Gobelet.getValeur(),plateau);
+        					this->ptPion->deplacer(gobelet::getValeur(),plateau);
         				}
         				else {
         					this->temps_prison += 1 ;
@@ -90,20 +90,20 @@ void joueur::jouer(Plateau plateau , gobelet Gobelet){
         }
         else { // cas classique
         	// A rajouter le choix de mettre des maisons ou pas
-        	Gobelet.lancer();
-        	int depalcement = Gobelet.getValeur();
-        	this->ptPion->deplacer(depalcement,plateau);
-        	if (Gobelet.Double() == true ){
+        	gobelet::lancer();
+        	int deplacement = gobelet::getValeur();
+        	this->ptPion->deplacer(deplacement,plateau);
+        	if (gobelet::Double()){
         		if (this->solde > 0) {
-        		Gobelet.lancer();
-        		int depalcement = Gobelet.getValeur();
-        		this->ptPion->deplacer(depalcement,plateau);
-        		if (Gobelet.Double() == true){
+        		gobelet::lancer();
+        		int deplacement = gobelet::getValeur();
+        		this->ptPion->deplacer(deplacement,plateau);
+        		if (gobelet::Double()){
         			if (this->solde > 0) {
-        			    Gobelet.lancer();
-        			    int depalcement = Gobelet.getValeur();
-        			    this->ptPion->deplacer(depalcement,plateau);
-        			    if (Gobelet.Double()==true){// DIRECTION PRISON
+        			    gobelet::lancer();
+        			    int deplacement = gobelet::getValeur();
+        			    this->ptPion->deplacer(deplacement,plateau);
+        			    if (gobelet::Double()){// DIRECTION PRISON
         			    		this->prison= true ;
         			    		this->ptPion->setPosition(&plateau.getListeCase()[10]);
         			    	}
